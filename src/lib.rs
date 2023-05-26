@@ -20,18 +20,31 @@ mod hello {
 
             // Instantiate a Hello component, populating its vault with our supply of 1000 HelloToken
             Self {
-                sample_vault: Vault::with_bucket(my_bucket)
+                sample_vault: Vault::with_bucket(my_bucket),
             }
-                .instantiate()
-                .globalize()
+            .instantiate()
+            .globalize()
         }
 
         // This is a method, because it needs a reference to self.  Methods can only be called on components
         pub fn free_token(&mut self) -> Bucket {
-            info!("My balance is: {} HelloToken. Now giving away a token!", self.sample_vault.amount());
+            info!(
+                "My balance is: {} HelloToken. Now giving away a token!",
+                self.sample_vault.amount()
+            );
             // If the semi-colon is omitted on the last line, the last value seen is automatically returned
             // In this case, a bucket containing 1 HelloToken is returned
             self.sample_vault.take(1)
+        }
+
+        pub fn request_amount(&mut self, amount: Decimal) {
+            info!("Moving {} HelloToken to another account", amount);
+            let bucket = self.sample_vault.take(amount);
+            assert!(
+                bucket.amount() > 100.into(),
+                "You only requested {}HT. Request at least 100",
+                bucket.amount()
+            );
         }
     }
 }
