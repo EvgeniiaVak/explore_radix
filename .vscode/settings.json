@@ -1,6 +1,7 @@
 {
     "editor.formatOnSave": true,
     "rust-analyzer.linkedProjects": [
+        "./Cargo.toml",
         "./ch2_ex1/Cargo.toml"
     ]
 }
