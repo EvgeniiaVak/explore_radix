@@ -44,4 +44,20 @@ fn test_hello() {
     );
     println!("{:?}\n", receipt);
     receipt.expect_commit_success();
+
+    // // test greeting
+    // let manifest = ManifestBuilder::new()
+    //     .call_method(component, "greet", manifest_args!())
+    //     .call_method(
+    //         account_component,
+    //         "deposit_batch",
+    //         manifest_args!(ManifestExpression::EntireWorktop),
+    //     )
+    //     .build();
+    // let receipt = test_runner.execute_manifest_ignoring_fee(
+    //     manifest,
+    //     vec![NonFungibleGlobalId::from_public_key(&public_key)],
+    // );
+    // println!("{:?}\n", receipt);
+    // receipt.expect_commit_success();
 }
