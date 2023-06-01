@@ -1,4 +1,7 @@
 use scrypto::prelude::*;
+mod application_level_auth;
+mod dex_example;
+mod system_level_auth;
 
 #[derive(ScryptoSbor, Debug)]
 pub enum Language {

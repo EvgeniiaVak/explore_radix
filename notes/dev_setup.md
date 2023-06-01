@@ -35,6 +35,12 @@ resim call-function [package_address] [blueprint_name] [function]
 resim call-method [component_address] [method]
 ```
 
+Example with parameters:
+
+```shell
+resim call-method component_sim1qw2a4jxqpn05zp7hyy54gdan788ct5xgjwj8n02292js0f3yx2 burn_banana resource_sim1qx2a4jxqpn05zp7hyy54gdan788ct5xgjwj8n02292js2hflez:1
+```
+
 
 FIXME:
 ```
