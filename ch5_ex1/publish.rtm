@@ -1,0 +1,10 @@
+CALL_METHOD
+    Address("component_sim1q0kryz5scup945usk39qjc2yjh6l5zsyuh8t7v5pk0tshjs68x")
+    "lock_fee"
+    Decimal("100");
+PUBLISH_PACKAGE
+    Blob("fbb16baae05090ee6c17f4e93ca674d4f136d3bc134f843f9b1150fa0eaed945")
+    Blob("f8d15a8f0dd715e7b8df84bff910feb992c12a415eda9d7fa6217fc24cc41937")
+    Map<String, Tuple>()
+    Map<String, String>()
+    Tuple(Map<Tuple, Enum>(Tuple(Enum(0u8), "PackageRoyalty_claim_royalty"), Enum(0u8, Enum(2u8, Enum(0u8, Enum(0u8, Enum(0u8, NonFungibleGlobalId("resource_sim1q227rrrmrg5pwfd7snldzw44tfhdd8etkzrgs8v996esfw3pz0:#1#")))))), Tuple(Enum(0u8), "PackageRoyalty_set_royalty_config"), Enum(0u8, Enum(2u8, Enum(0u8, Enum(0u8, Enum(0u8, NonFungibleGlobalId("resource_sim1q227rrrmrg5pwfd7snldzw44tfhdd8etkzrgs8v996esfw3pz0:#1#")))))), Tuple(Enum(2u8), "get"), Enum(0u8, Enum(0u8)), Tuple(Enum(2u8), "set"), Enum(0u8, Enum(2u8, Enum(0u8, Enum(0u8, Enum(0u8, NonFungibleGlobalId("resource_sim1q227rrrmrg5pwfd7snldzw44tfhdd8etkzrgs8v996esfw3pz0:#1#"))))))), Map<String, Enum>(), Enum(1u8), Map<Tuple, Enum>(Tuple(Enum(0u8), "PackageRoyalty_claim_royalty"), Enum(2u8, Enum(0u8, Enum(0u8, Enum(0u8, NonFungibleGlobalId("resource_sim1q227rrrmrg5pwfd7snldzw44tfhdd8etkzrgs8v996esfw3pz0:#1#"))))), Tuple(Enum(0u8), "PackageRoyalty_set_royalty_config"), Enum(2u8, Enum(0u8, Enum(0u8, Enum(0u8, NonFungibleGlobalId("resource_sim1q227rrrmrg5pwfd7snldzw44tfhdd8etkzrgs8v996esfw3pz0:#1#"))))), Tuple(Enum(2u8), "get"), Enum(2u8, Enum(0u8, Enum(0u8, Enum(0u8, NonFungibleGlobalId("resource_sim1q227rrrmrg5pwfd7snldzw44tfhdd8etkzrgs8v996esfw3pz0:#1#"))))), Tuple(Enum(2u8), "set"), Enum(2u8, Enum(0u8, Enum(0u8, Enum(0u8, NonFungibleGlobalId("resource_sim1q227rrrmrg5pwfd7snldzw44tfhdd8etkzrgs8v996esfw3pz0:#1#")))))), Map<String, Enum>(), Enum(1u8));

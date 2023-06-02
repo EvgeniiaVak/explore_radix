@@ -1,0 +1,55 @@
+# Account component address: account_sim1qn86kk7xaa3mx2n9fnyrcfmt6cs8nysvausz582l0rns6pqadn
+# Public key: 022f76b77ac764452efac509121b00428db09344b06939cae233f2139cc1b15a3f
+# Private key: ebedff55c00151b8cadf61ce2578c28a5df215e274490c740b154b3575420349
+# Owner badge: resource_sim1q227rrrmrg5pwfd7snldzw44tfhdd8etkzrgs8v996esfw3pz0:#1#
+# New Entities: 3
+# └─ Component: component_sim1qwtmd0nl08sdsv9gk6tl4my5n7wlqw3zvzn0x2galgzq6uc4vx
+# ├─ Resource: resource_sim1qxtmd0nl08sdsv9gk6tl4my5n7wlqw3zvzn0x2galgzqlzqwnw # manager_badge 
+# └─ Resource: resource_sim1q2tmd0nl08sdsv9gk6tl4my5n7wlqw3zvzn0x2galgzqqvh9p3 # member_badge
+
+# Step 1: Call the `lock_fee` method on your account component with a parameter of Decimal("10")
+CALL_METHOD
+    Address("account_sim1qn86kk7xaa3mx2n9fnyrcfmt6cs8nysvausz582l0rns6pqadn")
+    "lock_fee"
+    Decimal("10");
+
+# Step 2: Withdraw 25 XRD from your account component and create a bucket named `xrd` with it.
+CALL_METHOD 
+    Address("account_sim1qn86kk7xaa3mx2n9fnyrcfmt6cs8nysvausz582l0rns6pqadn") 
+    "withdraw" 
+    Address("resource_sim1qyqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqs6d89k")
+    Decimal("25");
+
+TAKE_FROM_WORKTOP 
+    Address("resource_sim1qyqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqs6d89k") 
+    Bucket("xrd");
+
+# Step 3: Call the `become_member` method on the instantiated component
+CALL_METHOD
+    Address("component_sim1qwtmd0nl08sdsv9gk6tl4my5n7wlqw3zvzn0x2galgzq6uc4vx")
+    "become_member";
+
+# Step 4: A member NFT badge was returned from the previous call. Create a bucket named `member_badge` from it.
+# Tip: You already know the resource address of the member nft.
+TAKE_FROM_WORKTOP 
+    Address("resource_sim1q2tmd0nl08sdsv9gk6tl4my5n7wlqw3zvzn0x2galgzqqvh9p3") 
+    Bucket("member_badge");
+
+# Step 5: Create a Proof named "member_proof" from the `member_badge` bucket
+CREATE_PROOF_FROM_BUCKET
+    Bucket("member_badge")
+    Proof("member_proof");
+
+# Step 6: Call the `stake_xrd` method on the instantiated_component and provide the named Bucket and Proof as arguments
+CALL_METHOD
+    Address("component_sim1qwtmd0nl08sdsv9gk6tl4my5n7wlqw3zvzn0x2galgzq6uc4vx")
+    "stake_xrd"
+    Bucket("xrd")
+    Proof("member_proof");
+
+# Step 7: The member badge returned from the `become_member` method 
+# has not been stored in a vault yet. Deposit it back into your account
+CALL_METHOD 
+    Address("account_sim1qn86kk7xaa3mx2n9fnyrcfmt6cs8nysvausz582l0rns6pqadn") 
+    "deposit" 
+    Bucket("member_badge");
