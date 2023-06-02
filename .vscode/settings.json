@@ -3,6 +3,7 @@
     "rust-analyzer.linkedProjects": [
         "./Cargo.toml",
         "./ch2_ex1/Cargo.toml",
-        "./ch3-ex1/Cargo.toml"
+        "./ch3-ex1/Cargo.toml",
+        "./ch4_ex1/Cargo.toml"
     ]
 }
